@@ -4,6 +4,8 @@ import { createRoot } from "react-dom/client";
 import "./styles/globals.css";
 import { AppRouter } from "./router.jsx";
 
+import "@fontsource/rubik";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AppRouter />

@@ -5,6 +5,8 @@ import {
   Link, // Digunakan untuk navigasi
 } from "react-router";
 
+import { HomePage } from "./pages/home-page";
+
 //======================================================================
 // DUMMY COMPONENTS (didefinisikan di sini agar file bisa langsung jalan)
 //======================================================================
@@ -13,7 +15,7 @@ import {
 // Komponen Halaman (Pages)
 // --------------------
 
-const HomePage = () => (
+const HomePageExample = () => (
   <div>
     <h2>Welcome to the Home Page</h2>
     <p>This is the main content area.</p>
@@ -134,13 +136,18 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <NotFoundPage />, // Tampilkan ini jika ada error atau halaman tidak ditemukan
     children: [
+      {
+        index: true,
+        element: <HomePage />, // Rute default untuk '/'
+      },
       // Grup rute yang menggunakan MainLayout
       {
         element: <MainLayout />,
+        path: "example",
         children: [
           {
             index: true, // Rute default untuk '/'
-            element: <HomePage />,
+            element: <HomePageExample />,
           },
           {
             path: "about", // menjadi '/about'
