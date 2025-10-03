@@ -3,7 +3,7 @@ name: Deploy React via SSH and Docker Compose
 # Pemicu workflow -> dijalankan saat ada push ke branch main atau bisa dijalankan manual
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -19,6 +19,8 @@ jobs:
           username: ${{ secrets.CI_CD_USER }}
           key: ${{ secrets.CI_CD_PASSWORD }}
           script: |
+            git config --global --add safe.directory /opt/production/smartfarming/FE_Smart_Farming
+
             cd /opt/production/smartfarming/FE_Smart_Farming
             git pull origin main
             sudo docker compose up -d --build frontend_react
