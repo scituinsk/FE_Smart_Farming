@@ -5,7 +5,7 @@ import { Button as AriaButton } from "react-aria-components";
 import { cn } from "../../utils/cn";
 
 const buttonVariants = cva(
-  // Base styles (sedikit disesuaikan untuk state dari React Aria)
+  // Base styles
   "inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
@@ -14,8 +14,8 @@ const buttonVariants = cva(
         primary: "bg-green-600 text-white hover:bg-green-700 pressed:bg-green-800",
         secondary: "bg-gray-600 text-white hover:bg-gray-700 pressed:bg-gray-800",
         destructive: "bg-red-600 text-white hover:bg-red-700 pressed:bg-red-800",
+        outline: "bg-transparent border border-[#326765] text-[#326765] hover:bg-[#326765] hover:text-white",
 
-        outline: "border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50",
         "outline-primary": "border border-green-600 bg-transparent text-green-600 hover:bg-green-50",
         "outline-destructive": "border border-red-600 bg-transparent text-red-600 hover:bg-red-50",
 
@@ -36,7 +36,7 @@ const buttonVariants = cva(
       rounded: {
         none: "rounded-none",
         sm: "rounded-sm",
-        default: " rounded-[15px]",
+        default: "rounded-[15px]",
         lg: "rounded-lg",
         xl: "rounded-xl",
         full: "rounded-full",
