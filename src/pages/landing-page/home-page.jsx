@@ -1,6 +1,7 @@
+import { Link } from "react-router";
 import backgroundImage from "../../assets/hero-image-bg.png";
 
-import { Button } from "../../components/index.js";
+import { Button } from "../../components/ui/Button.jsx";
 import { FEATURES } from "../../constants/landing-page-config.jsx";
 
 export const HomePage = () => {
@@ -28,7 +29,7 @@ export const HomePage = () => {
                 size="lg"
                 className="h-auto py-3 lg:h-[62px] px-8 lg:px-12 text-lg lg:text-[24px] text-[#326765] bg-white rounded-[15px]"
               >
-                Get Started
+                <Link to="/auth/login">Mulai Sekarang</Link>
               </Button>
             </div>
           </div>

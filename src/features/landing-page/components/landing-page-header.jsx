@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 
 import { cn } from "../../../utils/cn";
 
-import { Button } from "../../../components";
+import { Button } from "../../../components/ui/Button";
 import { AppLogo } from "../../../components/app-logo";
 import { NAV_ITEMS } from "../../../constants/landing-page-config";
 
@@ -20,7 +20,7 @@ export const LandingPageHeader = () => {
   };
 
   return (
-    <header className="bg-white h-auto xl:h-[143px] flex items-center relative shadow-md xl:shadow-none z-50">
+    <header className="bg-white h-auto flex items-center relative shadow-md xl:shadow-none z-50">
       <div className="container px-6 xl:px-[89px] mx-auto py-4 xl:py-6 flex items-center justify-between">
         <AppLogo />
 
@@ -62,7 +62,7 @@ export const LandingPageHeader = () => {
             <Link
               to={item.href}
               key={index}
-              className={cn("text-[24px]", getIsActivePath(item.href) ? "text-[#326765] font-bold" : "text-black")}
+              className={cn("text-[20px]", getIsActivePath(item.href) ? "text-[#326765] font-bold" : "text-black")}
             >
               {item.label}
             </Link>
@@ -72,14 +72,14 @@ export const LandingPageHeader = () => {
           <Button
             variant="ghost"
             size="lg"
-            className="mr-[29px] text-[#326765] text-[24px]"
+            className="mr-[29px] text-[#326765] text-[20px]"
           >
             Sign Up
           </Button>
           <Button
             variant="primary"
             size="lg"
-            className="text-white bg-[#326765] rounded-[15px] h-[62px] px-12 text-[24px]"
+            className="text-white bg-[#326765] text-[20px]"
           >
             Log In
           </Button>

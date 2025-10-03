@@ -1,11 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 
-import { LandingPageLayout } from "./layouts/landing-page-layout";
 import { AuthLayout } from "./layouts/auth-layout";
+import { GlobalLayout } from "./layouts/global-layout";
+import { CoreAppLayout } from "./layouts/core-app-layout";
+import { LandingPageLayout } from "./layouts/landing-page-layout";
 
 import { HomePage } from "./pages/landing-page/home-page";
 import { NotFoundPage } from "./pages/common/not-found";
 import { InternalServerError } from "./pages/common/internal-server-error";
+import { DashboardPage } from "./pages/core-app/dashboard-page";
+import { SchedulePage } from "./pages/core-app/schedule-page";
+import { HistoryPage } from "./pages/core-app/history-page";
 
 //======================================================================
 // KONFIGURASI ROUTER
@@ -14,6 +19,7 @@ import { InternalServerError } from "./pages/common/internal-server-error";
 const router = createBrowserRouter([
   {
     errorElement: <InternalServerError />,
+    element: <GlobalLayout />,
     children: [
       // Public routes with LandingPageLayout
       {
@@ -51,6 +57,24 @@ const router = createBrowserRouter([
           {
             path: "register",
             element: <div>Register Page</div>,
+          },
+        ],
+      },
+      {
+        path: "app",
+        element: <CoreAppLayout />,
+        children: [
+          {
+            path: "dashboard",
+            element: <DashboardPage />,
+          },
+          {
+            path: "schedule",
+            element: <SchedulePage />,
+          },
+          {
+            path: "history",
+            element: <HistoryPage />,
           },
         ],
       },
