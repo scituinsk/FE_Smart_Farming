@@ -12,3 +12,11 @@ body {
 button {
   cursor: pointer;
 }
+
+.clash-display-font {
+  font-family: "Clash Display", sans-serif;
+}
+
+.app-container {
+  @apply container px-6 xl:px-[89px] mx-auto py-4 xl:py-6;
+}
