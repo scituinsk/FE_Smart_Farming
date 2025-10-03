@@ -19,8 +19,19 @@ jobs:
           username: ${{ secrets.CI_CD_USER }}
           key: ${{ secrets.CI_CD_PASSWORD }}
           script: |
-            git config --global --add safe.directory /opt/production/smartfarming/FE_Smart_Farming
+            set -e
 
             cd /opt/production/smartfarming/FE_Smart_Farming
+
+            git config --global --add safe.directory /opt/production/smartfarming/FE_Smart_Farming
+
+            echo "Pulling latest code from origin main..."
             git pull origin main
-            sudo docker compose up -d --build frontend_react
+
+            echo "Building new Docker image without cache..."
+            sudo docker compose build --no-cache frontend_react
+
+            echo "Recreating and starting container..."
+            sudo docker compose up -d --force-recreate frontend_react
+
+            echo "Deployment finished successfully!"
