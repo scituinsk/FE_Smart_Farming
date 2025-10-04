@@ -27,7 +27,7 @@ const Input = React.forwardRef(({ className, ...props }, ref) => (
     className={cn(
       "flex h-10 w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm",
       "ring-offset-white placeholder:text-zinc-500",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#326765] focus-visible:ring-offset-2",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "data-[invalid]:border-red-500 ",
       className

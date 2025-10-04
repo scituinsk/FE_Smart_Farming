@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
+:root {
+  --primary: #326765;
+  --secondary: #3288c6;
+  --ternary: #97008b;
+  --surface: #f3f5f7;
+  --error: #c70000;
+  --text: #171717;
+  --title-secondary: #7c7c7c;
+  --text-invers: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--surface);
+  --color-text: var(--text);
+  --color-title-secondary: var(--title-secondary);
+  --color-text-invers: var(--text-invers);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-ternary: var(--ternary);
+  --color-surface: var(--surface);
+  --color-error: var(--error);
+}
+
 body {
+  @apply bg-background text-text;
+
   font-family: "Rubik", sans-serif;
-  background-color: #f3f5f7;
-
   overflow-y: scroll;
-
   scrollbar-gutter: auto;
 }
 
