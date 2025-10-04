@@ -18,8 +18,10 @@ export const HomePage = () => {
       >
         <div className="container mx-auto px-6 lg:px-[89px] pt-0 lg:pt-32">
           <div className="max-w-full lg:max-w-[665px] text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-semibold text-white">Selamat Datang di Pak Tani!</h1>
-            <p className="text-lg md:text-xl lg:text-[24px] text-white mt-2">
+            {/* Penyesuaian font H1 */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white">Selamat Datang di Pak Tani!</h1>
+            {/* Penyesuaian font Paragraf */}
+            <p className="text-base md:text-lg lg:text-xl text-white mt-2">
               Kelola dan pantau sistem irigasi pertanian Anda dengan mudah, langsung dari genggaman Anda.
             </p>
 
@@ -27,7 +29,8 @@ export const HomePage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-auto py-3 lg:h-[62px] px-8 lg:px-12 text-lg lg:text-[24px] text-[#326765] bg-white rounded-[15px]"
+                asChild
+                className="h-auto py-3 lg:h-[62px] px-8 lg:px-12 text-md md:text-lg lg:text-xl text-[#326765] bg-white rounded-[15px]"
               >
                 <Link to="/app/dashboard">Mulai Sekarang</Link>
               </Button>
@@ -40,8 +43,12 @@ export const HomePage = () => {
       <div className="py-16 lg:mt-[87px] lg:py-0">
         <div className="container mx-auto px-6 lg:px-[89px] flex flex-col">
           <div className="mx-auto w-full lg:w-[505px] text-center">
-            <h2 className="text-3xl lg:text-[36px] font-semibold">Fitur - fitur</h2>
-            <p className="text-base lg:text-[20px] text-[#7d7d7d] mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
+            {/* Penyesuaian font H2 */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">Fitur - fitur</h2>
+            {/* Penyesuaian font Paragraf */}
+            <p className="text-sm md:text-base lg:text-lg text-[#7d7d7d] mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod{" "}
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 lg:mt-[61px] gap-8 lg:gap-[58px]">
             {FEATURES.map((feature, i) => (
@@ -51,8 +58,10 @@ export const HomePage = () => {
               >
                 <div className="flex flex-col items-center gap-4 text-center">
                   {feature.icon}
-                  <h3 className="font-semibold text-xl lg:text-[24px] text-[#326765] mt-2">{feature.title}</h3>
-                  <p className="text-base lg:text-[18px] leading-relaxed lg:leading-[24px] text-center text-[#7d7d7d]">{feature.description}</p>
+                  {/* Penyesuaian font H3 di dalam kartu */}
+                  <h3 className="font-semibold text-xl lg:text-2xl text-[#326765] mt-2">{feature.title}</h3>
+                  {/* Penyesuaian font Paragraf di dalam kartu */}
+                  <p className="text-base leading-relaxed lg:leading-[24px] text-center text-[#7d7d7d]">{feature.description}</p>
                 </div>
               </div>
             ))}

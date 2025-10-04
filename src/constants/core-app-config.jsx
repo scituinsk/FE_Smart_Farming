@@ -4,10 +4,6 @@ export const CORE_APP_NAV_ITEMS = [
     href: "/app/dashboard",
   },
   {
-    label: "Schedule",
-    href: "/app/schedule",
-  },
-  {
     label: "History",
     href: "/app/history",
   },

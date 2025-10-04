@@ -9,7 +9,6 @@ import { HomePage } from "./pages/landing-page/home-page";
 import { NotFoundPage } from "./pages/common/not-found";
 import { InternalServerError } from "./pages/common/internal-server-error";
 import { DashboardPage } from "./pages/core-app/dashboard-page";
-import { SchedulePage } from "./pages/core-app/schedule-page";
 import { HistoryPage } from "./pages/core-app/history-page";
 
 //======================================================================
@@ -21,7 +20,6 @@ const router = createBrowserRouter([
     errorElement: <InternalServerError />,
     element: <GlobalLayout />,
     children: [
-      // Public routes with LandingPageLayout
       {
         path: "/",
         element: <LandingPageLayout />,
@@ -40,10 +38,9 @@ const router = createBrowserRouter([
           },
         ],
       },
-      // Protected routes (bisa ditambahkan layout khusus)
       {
         path: "profile",
-        element: <div>Profile Page</div>, // TODO: Tambahkan layout untuk protected routes
+        element: <div>Profile Page</div>,
       },
       // Auth routes with AuthLayout
       {
@@ -67,10 +64,6 @@ const router = createBrowserRouter([
           {
             path: "dashboard",
             element: <DashboardPage />,
-          },
-          {
-            path: "schedule",
-            element: <SchedulePage />,
           },
           {
             path: "history",
