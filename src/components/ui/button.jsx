@@ -5,32 +5,36 @@ import { Button as AriaButton } from "react-aria-components";
 import { cn } from "../../utils/cn";
 
 const buttonVariants = cva(
-  // Base styles
-  "inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-blue-600 text-white hover:bg-blue-700 pressed:bg-blue-800",
-        primary: "bg-green-600 text-white hover:bg-green-700 pressed:bg-green-800",
-        secondary: "bg-gray-600 text-white hover:bg-gray-700 pressed:bg-gray-800",
-        destructive: "bg-red-600 text-white hover:bg-red-700 pressed:bg-red-800",
-        outline: "bg-transparent border border-[#326765] text-[#326765] hover:bg-[#326765] hover:text-white",
+        default: "bg-primary text-text-invers hover:bg-secondary",
 
-        "outline-primary": "border border-green-600 bg-transparent text-green-600 hover:bg-green-50",
-        "outline-destructive": "border border-red-600 bg-transparent text-red-600 hover:bg-red-50",
+        primary: "bg-primary text-text-invers hover:bg-secondary",
+        secondary: "bg-secondary text-text-invers hover:bg-primary",
+        ternary: "bg-ternary text-text-invers hover:bg-primary active:bg-secondary",
 
-        ghost: "bg-transparent text-gray-700 hover:bg-gray-100",
-        "ghost-primary": "bg-transparent text-green-600 hover:bg-green-50",
-        "ghost-destructive": "bg-transparent text-red-600 hover:bg-red-50",
+        destructive: "bg-error text-text-invers hover:opacity-90 active:opacity-80",
 
-        link: "bg-transparent text-blue-600 underline-offset-4 hover:underline",
+        outline: "bg-transparent border border-primary text-primary hover:bg-primary hover:text-text-invers",
+
+        "outline-primary": "border border-primary bg-transparent text-primary hover:bg-primary hover:text-text-invers",
+
+        "outline-destructive": "border border-error bg-transparent text-error hover:bg-error hover:text-text-invers",
+
+        ghost: "bg-transparent text-text hover:bg-surface/70 active:bg-surface/90",
+        "ghost-primary": "bg-transparent text-primary hover:bg-surface/70 active:bg-surface/90",
+        "ghost-destructive": "bg-transparent text-error hover:bg-surface/70 active:bg-surface/90",
+
+        link: "bg-transparent text-primary underline-offset-4 hover:underline",
       },
       size: {
         xs: "h-8 px-2 text-xs",
         sm: "h-9 px-3 text-sm",
         default: "h-10 px-4 py-2",
         lg: "h-11 px-8 text-lg",
-        xl: "h-12 px-10 text-xl",
+        xl: "h-14 px-10 text-xl",
         icon: "h-10 w-10",
       },
       rounded: {

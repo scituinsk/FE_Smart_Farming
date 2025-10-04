@@ -20,7 +20,7 @@ export const LandingPageHeader = () => {
   };
 
   return (
-    <header className="bg-white h-auto flex items-center relative shadow-md xl:shadow-none z-50">
+    <header className="bg-text-invers h-auto flex items-center relative shadow-md xl:shadow-none z-50">
       <div className="container px-6 xl:px-[89px] mx-auto py-4 xl:py-6 flex items-center justify-between">
         <AppLogo />
 
@@ -33,7 +33,7 @@ export const LandingPageHeader = () => {
           >
             <span
               className={cn(
-                "block w-full h-1 rounded-2xl  bg-gray-700 absolute left-0 transform transition duration-300 ease-in-out",
+                "block w-full h-1 rounded-2xl  bg-text absolute left-0 transform transition duration-300 ease-in-out",
                 isMenuOpen
                   ? "top-1/2 rotate-45 -translate-y-1/2" // Pindah ke tengah lalu putar
                   : "top-1.5" // Posisi garis atas
@@ -41,13 +41,13 @@ export const LandingPageHeader = () => {
             ></span>
             <span
               className={cn(
-                "block w-full h-1 rounded-2xl  bg-gray-700 absolute left-0 top-1/2 -translate-y-1/2 transition-opacity duration-300 ease-in-out",
+                "block w-full h-1 rounded-2xl  bg-text absolute left-0 top-1/2 -translate-y-1/2 transition-opacity duration-300 ease-in-out",
                 isMenuOpen ? "opacity-0" : "opacity-100" // Sembunyikan garis tengah
               )}
             ></span>
             <span
               className={cn(
-                "block w-full h-1 rounded-2xl  bg-gray-700 absolute left-0 transform transition duration-300 ease-in-out",
+                "block w-full h-1 rounded-2xl  bg-text absolute left-0 transform transition duration-300 ease-in-out",
                 isMenuOpen
                   ? "top-1/2 -rotate-45 -translate-y-1/2" // Pindah ke tengah lalu putar
                   : "bottom-1.5" // Posisi garis bawah
@@ -62,7 +62,10 @@ export const LandingPageHeader = () => {
             <Link
               to={item.href}
               key={index}
-              className={cn("text-[20px]", getIsActivePath(item.href) ? "text-[#326765] font-bold" : "text-black")}
+              className={cn(
+                "text-xl transition-colors duration-200 hover:text-primary",
+                getIsActivePath(item.href) ? "text-primary font-bold" : "text-black"
+              )}
             >
               {item.label}
             </Link>
@@ -72,14 +75,13 @@ export const LandingPageHeader = () => {
           <Button
             variant="ghost"
             size="lg"
-            className="mr-[29px] text-[#326765] text-[20px]"
+            className="mr-[29px] text-primary"
           >
             Sign Up
           </Button>
           <Button
             variant="primary"
             size="lg"
-            className="text-white bg-[#326765] text-[20px]"
           >
             Log In
           </Button>
@@ -89,7 +91,7 @@ export const LandingPageHeader = () => {
       {/* Mobile Menu  */}
       <div
         className={cn(
-          "absolute top-full left-0 w-full bg-white shadow-lg xl:hidden z-20 transform transition-all duration-300 ease-in-out",
+          "absolute top-full left-0 w-full bg-text-invers shadow-lg xl:hidden z-20 transform transition-all duration-300 ease-in-out",
           isMenuOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"
         )}
       >
@@ -100,8 +102,8 @@ export const LandingPageHeader = () => {
               to={item.href}
               onClick={() => setIsMenuOpen(false)}
               className={cn(
-                "w-full text-center py-4 text-lg border-b border-gray-100 transition-colors duration-200 hover:bg-gray-50",
-                getIsActivePath(item.href) ? "text-[#326765] font-bold" : "text-black"
+                "w-full text-center py-4 text-lg  transition-colors duration-200 hover:text-primary",
+                getIsActivePath(item.href) ? "text-primary font-bold" : "text-black"
               )}
               style={{
                 transitionDelay: `${isMenuOpen ? index * 50 : 0}ms`,
@@ -117,14 +119,14 @@ export const LandingPageHeader = () => {
             <Button
               variant="ghost"
               size="lg"
-              className="w-full text-[#326765] text-lg"
+              className="w-full text-primary text-lg"
             >
               Sign Up
             </Button>
             <Button
               variant="primary"
               size="lg"
-              className="w-full text-white bg-[#326765] rounded-[15px] text-lg py-3"
+              className="w-full text-lg "
             >
               Log In
             </Button>

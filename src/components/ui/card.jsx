@@ -4,7 +4,7 @@ import { cn } from "../../utils/cn";
 const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("rounded-lg border border-zinc-200 bg-white text-zinc-950 shadow-sm", className)}
+    className={cn("rounded-lg  bg-text-invers text-text shadow-sm", className)}
     {...props}
   />
 ));
@@ -22,7 +22,7 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn("text-2xl font-semibold leading-none tracking-tight", className)}
+    className={cn("text-2xl font-semibold leading-none tracking-tight text-text", className)}
     {...props}
   />
 ));
@@ -31,7 +31,7 @@ CardTitle.displayName = "CardTitle";
 const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-zinc-500 dark:text-zinc-400", className)}
+    className={cn("text-sm text-title-secondary", className)}
     {...props}
   />
 ));

@@ -2,7 +2,7 @@ import logoBrandSecondary from "../../../assets/logo-brand-secondary.png";
 
 export const LandingPageFooter = () => {
   return (
-    <footer className="mt-16 lg:mt-[245px] bg-[#4D7D7A] text-white h-auto">
+    <footer className="mt-16 lg:mt-[245px] bg-primary text-surface h-auto">
       <div className="container mx-auto px-6 lg:px-[89px] py-12 flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left">
         {/* Left Section */}
         <div className="mb-8 lg:mb-0">

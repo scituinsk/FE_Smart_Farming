@@ -74,12 +74,9 @@ const AvatarImage = React.forwardRef(({ src, className, ...props }, ref) => {
 });
 AvatarImage.displayName = "AvatarImage";
 
-// --- PERBAIKAN DI AVATARFALLBACK ---
 const AvatarFallback = React.forwardRef(({ className, children, ...props }, ref) => {
   const { imageStatus } = useAvatarContext();
 
-  // 1. Tampilkan fallback jika status BUKAN 'loaded'
-  // Ini mencakup kondisi 'loading' dan 'error'
   if (imageStatus === "loaded") {
     return null;
   }

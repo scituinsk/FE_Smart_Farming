@@ -6,10 +6,10 @@ import { FEATURES } from "../../constants/landing-page-config.jsx";
 
 export const HomePage = () => {
   return (
-    <div className="bg-gray-50">
+    <div>
       {/* Hero */}
       <div
-        className="bg-gray-100 h-[500px] md:h-[600px] lg:h-[712px] flex items-center"
+        className="bg-surface h-[500px] md:h-[600px] lg:h-[712px] flex items-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -19,18 +19,16 @@ export const HomePage = () => {
         <div className="container mx-auto px-6 lg:px-[89px] pt-0 lg:pt-32">
           <div className="max-w-full lg:max-w-[665px] text-center lg:text-left">
             {/* Penyesuaian font H1 */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white">Selamat Datang di Pak Tani!</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-text-invers">Selamat Datang di Pak Tani!</h1>
             {/* Penyesuaian font Paragraf */}
-            <p className="text-base md:text-lg lg:text-xl text-white mt-2">
+            <p className="text-base md:text-lg lg:text-xl text-text-invers mt-2">
               Kelola dan pantau sistem irigasi pertanian Anda dengan mudah, langsung dari genggaman Anda.
             </p>
 
             <div className="mt-8 lg:mt-[46px]">
               <Button
-                variant="outline"
-                size="lg"
                 asChild
-                className="h-auto py-3 lg:h-[62px] px-8 lg:px-12 text-md md:text-lg lg:text-xl text-[#326765] bg-white rounded-[15px]"
+                className="h-auto lg:h-14 px-10 text-md md:text-lg lg:text-xl text-primary bg-surface hover:bg-primary hover:text-surface"
               >
                 <Link to="/app/dashboard">Mulai Sekarang</Link>
               </Button>
@@ -46,7 +44,7 @@ export const HomePage = () => {
             {/* Penyesuaian font H2 */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">Fitur - fitur</h2>
             {/* Penyesuaian font Paragraf */}
-            <p className="text-sm md:text-base lg:text-lg text-[#7d7d7d] mt-2">
+            <p className="text-sm md:text-base lg:text-lg text-title-secondary mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod{" "}
             </p>
           </div>
@@ -59,9 +57,9 @@ export const HomePage = () => {
                 <div className="flex flex-col items-center gap-4 text-center">
                   {feature.icon}
                   {/* Penyesuaian font H3 di dalam kartu */}
-                  <h3 className="font-semibold text-xl lg:text-2xl text-[#326765] mt-2">{feature.title}</h3>
+                  <h3 className="font-semibold text-xl lg:text-2xl text-primary mt-2">{feature.title}</h3>
                   {/* Penyesuaian font Paragraf di dalam kartu */}
-                  <p className="text-base leading-relaxed lg:leading-[24px] text-center text-[#7d7d7d]">{feature.description}</p>
+                  <p className="text-base leading-relaxed lg:leading-[24px] text-center text-title-secondary">{feature.description}</p>
                 </div>
               </div>
             ))}

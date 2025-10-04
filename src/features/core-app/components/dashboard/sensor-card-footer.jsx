@@ -9,7 +9,7 @@ export const SensorCardFooter = ({ icon, label, value, status }) => {
 
       {/* Value atau status */}
       {status ? (
-        <p className=" inline-block mt-1 px-3 py-1 rounded-full bg-green-400 text-black text-sm font-medium">{status}</p>
+        <p className=" inline-block mt-1 px-3 py-1 rounded-full bg-[#9AD16D] text-primary text-sm font-medium">{status}</p>
       ) : (
         <p className="mt-1 text-base">{value}</p>
       )}
