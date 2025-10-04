@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, cloneElement, isValidElement } from "react";
 import { cva } from "class-variance-authority";
 import { Button as AriaButton } from "react-aria-components";
 
@@ -50,11 +50,22 @@ const buttonVariants = cva(
   }
 );
 
-const Button = forwardRef(({ className, variant, size, rounded, children, ...props }, ref) => {
+const Button = forwardRef(({ className, variant, size, rounded, asChild = false, children, ...props }, ref) => {
+  const buttonClasses = cn(buttonVariants({ variant, size, rounded, className }));
+
+  if (asChild && isValidElement(children)) {
+    return cloneElement(children, {
+      ref,
+      className: cn(buttonClasses, children.props.className),
+      ...props,
+      ...children.props,
+    });
+  }
+
   return (
     <AriaButton
       ref={ref}
-      className={cn(buttonVariants({ variant, size, rounded, className }))}
+      className={buttonClasses}
       {...props}
     >
       {children}
