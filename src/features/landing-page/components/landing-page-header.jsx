@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 
 import { cn } from "../../../utils/cn";
 
-import { Button } from "../../../components/ui/Button";
+import { Button } from "../../../components/ui/button";
 import { AppLogo } from "../../../components/app-logo";
 import { NAV_ITEMS } from "../../../constants/landing-page-config";
 
