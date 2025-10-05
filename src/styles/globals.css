@@ -27,6 +27,8 @@
 body {
   @apply bg-background text-text;
 
+  min-width: 300px;
+
   font-family: "Rubik", sans-serif;
   overflow-y: scroll;
   scrollbar-gutter: auto;
