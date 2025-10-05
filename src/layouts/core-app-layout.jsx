@@ -7,12 +7,7 @@ export const CoreAppLayout = () => {
 
   if (location.pathname.replace(/\/$/, "") === "/app") {
     // Redirect to /app/dashboard
-    return (
-      <Navigate
-        to="/app/dashboard"
-        replace
-      />
-    );
+    return <Navigate to="/app/dashboard" replace />;
   }
   return (
     <>

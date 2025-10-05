@@ -10,7 +10,9 @@ import { SensorCardFooter } from "../../features/core-app/components/dashboard/s
 export const DashboardPage = () => {
   return (
     <div className="app-container">
-      <h1 className="clash-display-font font-semibold  text-lg lg:text-[28px] tracking-wider mb-5">Yuk Atur Jadwal Penyiraman Untuk Hari Ini!</h1>
+      <h1 className="clash-display-font font-semibold  text-lg lg:text-[28px] tracking-wider mb-5">
+        Yuk Atur Jadwal Penyiraman Untuk Hari Ini!
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card>
           <CardContent className="flex items-center">
@@ -37,8 +39,12 @@ export const DashboardPage = () => {
               </svg>
             </div>
             <div className="ml-10 flex justify-between items-center w-full">
-              <span className="text-lg lg:text-xl font-semibold">Selenoid Aktif</span>
-              <span className="text-[#3289c8] text-lg lg:text-xl font-semibold">8</span>
+              <span className="text-lg lg:text-xl font-semibold">
+                Selenoid Aktif
+              </span>
+              <span className="text-[#3289c8] text-lg lg:text-xl font-semibold">
+                8
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -60,8 +66,12 @@ export const DashboardPage = () => {
               </svg>
             </div>
             <div className="ml-10 flex justify-between items-center w-full">
-              <span className="text-lg lg:text-xl font-semibold">Water Pump Aktif</span>
-              <span className="text-[#3289c8] text-lg lg:text-xl font-semibold">3</span>
+              <span className="text-lg lg:text-xl font-semibold">
+                Water Pump Aktif
+              </span>
+              <span className="text-[#3289c8] text-lg lg:text-xl font-semibold">
+                3
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -69,7 +79,9 @@ export const DashboardPage = () => {
 
       {/* Search */}
       <div className="my-5">
-        <h2 className="font-semibold text-lg lg:text-[20px] tracking-wider my-5">Cari Modul</h2>
+        <h2 className="font-semibold text-lg lg:text-[20px] tracking-wider my-5">
+          Cari Modul
+        </h2>
 
         <div className="grid grid-cols-12 gap-4 md:gap-2">
           {/* Input Pencarian */}
@@ -125,13 +137,12 @@ export const DashboardPage = () => {
       </div>
       {/* Ringkasan Module */}
       <div className="w-full">
-        <h2 className="font-semibold  text-lg lg:text-[20px] tracking-wider my-5">List Modul</h2>
+        <h2 className="font-semibold  text-lg lg:text-[20px] tracking-wider my-5">
+          List Modul
+        </h2>
         <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
           {Array.from({ length: 6 }).map((_, i) => (
-            <Card
-              className="overflow-hidden"
-              key={i}
-            >
+            <Card className="overflow-hidden" key={i}>
               <CardHeader
                 style={{
                   backgroundImage: "url('/bg.jpg')",
@@ -155,7 +166,9 @@ export const DashboardPage = () => {
                     />
                   </svg>
 
-                  <span className="font-bold ml-2 text-primary">Green House A</span>
+                  <span className="font-bold ml-2 text-primary">
+                    Green House A
+                  </span>
                 </div>
                 <div className="absolute top-4 right-4 bg-white bg-opacity-70 px-3 py-1 rounded-2xl h-10 flex justify-center items-center">
                   <svg
