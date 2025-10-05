@@ -15,7 +15,10 @@ export const LandingPageFooter = () => {
             />
             <h2 className="text-3xl lg:text-[40px] font-bold">PakTani</h2>
           </div>
-          <p className="mt-4 max-w-sm text-sm lg:text-[16px]">Empowering farmers with digital tools to thrive in modern agriculture</p>
+          <p className="mt-4 max-w-sm text-sm lg:text-[16px]">
+            Empowering farmers with digital tools to thrive in modern
+            agriculture
+          </p>
         </div>
 
         {/* Right Section */}
@@ -29,11 +32,7 @@ export const LandingPageFooter = () => {
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
-              <rect
-                width={26}
-                height={26}
-                fill="url(#pattern0_1173_119)"
-              />
+              <rect width={26} height={26} fill="url(#pattern0_1173_119)" />
               <defs>
                 <pattern
                   id="pattern0_1173_119"
@@ -41,10 +40,7 @@ export const LandingPageFooter = () => {
                   width={1}
                   height={1}
                 >
-                  <use
-                    xlinkHref="#image0_1173_119"
-                    transform="scale(0.01)"
-                  />
+                  <use xlinkHref="#image0_1173_119" transform="scale(0.01)" />
                 </pattern>
                 <image
                   id="image0_1173_119"
@@ -68,11 +64,7 @@ export const LandingPageFooter = () => {
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
-              <rect
-                width={26}
-                height={26}
-                fill="url(#pattern0_1173_126)"
-              />
+              <rect width={26} height={26} fill="url(#pattern0_1173_126)" />
               <defs>
                 <pattern
                   id="pattern0_1173_126"
@@ -80,10 +72,7 @@ export const LandingPageFooter = () => {
                   width={1}
                   height={1}
                 >
-                  <use
-                    xlinkHref="#image0_1173_126"
-                    transform="scale(0.01)"
-                  />
+                  <use xlinkHref="#image0_1173_126" transform="scale(0.01)" />
                 </pattern>
                 <image
                   id="image0_1173_126"
@@ -95,14 +84,18 @@ export const LandingPageFooter = () => {
               </defs>
             </svg>
 
-            <span className="text-sm lg:text-[16px]">scit.uinsuka@gmail.com</span>
+            <span className="text-sm lg:text-[16px]">
+              scit.uinsuka@gmail.com
+            </span>
           </div>
         </div>
       </div>
 
       {/* Bottom */}
       <div className="container mx-auto px-6 lg:px-[89px] pb-6">
-        <p className="text-[12px] text-center lg:text-right font-bold">&copy; {new Date().getFullYear()} PakTani. All rights reserved.</p>
+        <p className="text-[12px] text-center lg:text-right font-bold">
+          &copy; {new Date().getFullYear()} PakTani. All rights reserved.
+        </p>
       </div>
     </footer>
   );

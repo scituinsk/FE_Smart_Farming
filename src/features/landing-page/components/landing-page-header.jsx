@@ -36,13 +36,13 @@ export const LandingPageHeader = () => {
                 "block w-full h-1 rounded-2xl  bg-text absolute left-0 transform transition duration-300 ease-in-out",
                 isMenuOpen
                   ? "top-1/2 rotate-45 -translate-y-1/2" // Pindah ke tengah lalu putar
-                  : "top-1.5" // Posisi garis atas
+                  : "top-1.5", // Posisi garis atas
               )}
             ></span>
             <span
               className={cn(
                 "block w-full h-1 rounded-2xl  bg-text absolute left-0 top-1/2 -translate-y-1/2 transition-opacity duration-300 ease-in-out",
-                isMenuOpen ? "opacity-0" : "opacity-100" // Sembunyikan garis tengah
+                isMenuOpen ? "opacity-0" : "opacity-100", // Sembunyikan garis tengah
               )}
             ></span>
             <span
@@ -50,7 +50,7 @@ export const LandingPageHeader = () => {
                 "block w-full h-1 rounded-2xl  bg-text absolute left-0 transform transition duration-300 ease-in-out",
                 isMenuOpen
                   ? "top-1/2 -rotate-45 -translate-y-1/2" // Pindah ke tengah lalu putar
-                  : "bottom-1.5" // Posisi garis bawah
+                  : "bottom-1.5", // Posisi garis bawah
               )}
             ></span>
           </button>
@@ -64,7 +64,9 @@ export const LandingPageHeader = () => {
               key={index}
               className={cn(
                 "text-xl transition-colors duration-200 hover:text-primary",
-                getIsActivePath(item.href) ? "text-primary font-bold" : "text-black"
+                getIsActivePath(item.href)
+                  ? "text-primary font-bold"
+                  : "text-black",
               )}
             >
               {item.label}
@@ -72,17 +74,10 @@ export const LandingPageHeader = () => {
           ))}
         </div>
         <div className="hidden xl:flex items-center ">
-          <Button
-            variant="ghost"
-            size="lg"
-            className="mr-[29px] text-primary"
-          >
+          <Button variant="ghost" size="lg" className="mr-[29px] text-primary">
             Sign Up
           </Button>
-          <Button
-            variant="primary"
-            size="lg"
-          >
+          <Button variant="primary" size="lg">
             Log In
           </Button>
         </div>
@@ -92,7 +87,9 @@ export const LandingPageHeader = () => {
       <div
         className={cn(
           "absolute top-full left-0 w-full bg-text-invers shadow-lg xl:hidden z-20 transform transition-all duration-300 ease-in-out",
-          isMenuOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"
+          isMenuOpen
+            ? "opacity-100 translate-y-0 visible"
+            : "opacity-0 -translate-y-4 invisible",
         )}
       >
         <div className="flex flex-col items-center py-4">
@@ -103,7 +100,9 @@ export const LandingPageHeader = () => {
               onClick={() => setIsMenuOpen(false)}
               className={cn(
                 "w-full text-center py-4 text-lg  transition-colors duration-200 hover:text-primary",
-                getIsActivePath(item.href) ? "text-primary font-bold" : "text-black"
+                getIsActivePath(item.href)
+                  ? "text-primary font-bold"
+                  : "text-black",
               )}
               style={{
                 transitionDelay: `${isMenuOpen ? index * 50 : 0}ms`,
@@ -123,11 +122,7 @@ export const LandingPageHeader = () => {
             >
               Sign Up
             </Button>
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full text-lg "
-            >
+            <Button variant="primary" size="lg" className="w-full text-lg ">
               Log In
             </Button>
           </div>

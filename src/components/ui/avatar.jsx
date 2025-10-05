@@ -26,7 +26,9 @@ const AvatarContext = createContext();
 const useAvatarContext = () => {
   const context = useContext(AvatarContext);
   if (!context) {
-    throw new Error("Avatar components must be used within an <Avatar> provider");
+    throw new Error(
+      "Avatar components must be used within an <Avatar> provider",
+    );
   }
   return context;
 };
@@ -74,23 +76,28 @@ const AvatarImage = React.forwardRef(({ src, className, ...props }, ref) => {
 });
 AvatarImage.displayName = "AvatarImage";
 
-const AvatarFallback = React.forwardRef(({ className, children, ...props }, ref) => {
-  const { imageStatus } = useAvatarContext();
+const AvatarFallback = React.forwardRef(
+  ({ className, children, ...props }, ref) => {
+    const { imageStatus } = useAvatarContext();
 
-  if (imageStatus === "loaded") {
-    return null;
-  }
+    if (imageStatus === "loaded") {
+      return null;
+    }
 
-  return (
-    <div
-      ref={ref}
-      className={cn("flex h-full w-full items-center justify-center bg-gray-200 text-gray-600 font-medium select-none", className)}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          "flex h-full w-full items-center justify-center bg-gray-200 text-gray-600 font-medium select-none",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  },
+);
 AvatarFallback.displayName = "AvatarFallback";
 
 export { Avatar, AvatarImage, AvatarFallback };

@@ -13,19 +13,27 @@ const buttonVariants = cva(
 
         primary: "bg-primary text-text-invers hover:bg-secondary",
         secondary: "bg-secondary text-text-invers hover:bg-primary",
-        ternary: "bg-ternary text-text-invers hover:bg-primary active:bg-secondary",
+        ternary:
+          "bg-ternary text-text-invers hover:bg-primary active:bg-secondary",
 
-        destructive: "bg-error text-text-invers hover:opacity-90 active:opacity-80",
+        destructive:
+          "bg-error text-text-invers hover:opacity-90 active:opacity-80",
 
-        outline: "bg-transparent border border-primary text-primary hover:bg-primary hover:text-text-invers",
+        outline:
+          "bg-transparent border border-primary text-primary hover:bg-primary hover:text-text-invers",
 
-        "outline-primary": "border border-primary bg-transparent text-primary hover:bg-primary hover:text-text-invers",
+        "outline-primary":
+          "border border-primary bg-transparent text-primary hover:bg-primary hover:text-text-invers",
 
-        "outline-destructive": "border border-error bg-transparent text-error hover:bg-error hover:text-text-invers",
+        "outline-destructive":
+          "border border-error bg-transparent text-error hover:bg-error hover:text-text-invers",
 
-        ghost: "bg-transparent text-text hover:bg-surface/70 active:bg-surface/90",
-        "ghost-primary": "bg-transparent text-primary hover:bg-surface/70 active:bg-surface/90",
-        "ghost-destructive": "bg-transparent text-error hover:bg-surface/70 active:bg-surface/90",
+        ghost:
+          "bg-transparent text-text hover:bg-surface/70 active:bg-surface/90",
+        "ghost-primary":
+          "bg-transparent text-primary hover:bg-surface/70 active:bg-surface/90",
+        "ghost-destructive":
+          "bg-transparent text-error hover:bg-surface/70 active:bg-surface/90",
 
         link: "bg-transparent text-primary underline-offset-4 hover:underline",
       },
@@ -51,32 +59,35 @@ const buttonVariants = cva(
       size: "default",
       rounded: "default",
     },
-  }
+  },
 );
 
-const Button = forwardRef(({ className, variant, size, rounded, asChild = false, children, ...props }, ref) => {
-  const buttonClasses = cn(buttonVariants({ variant, size, rounded, className }));
+const Button = forwardRef(
+  (
+    { className, variant, size, rounded, asChild = false, children, ...props },
+    ref,
+  ) => {
+    const buttonClasses = cn(
+      buttonVariants({ variant, size, rounded, className }),
+    );
 
-  if (asChild && isValidElement(children)) {
-    return cloneElement(children, {
-      ref,
-      className: cn(buttonClasses, children.props.className),
-      ...props,
-      ...children.props,
-    });
-  }
+    if (asChild && isValidElement(children)) {
+      return cloneElement(children, {
+        ref,
+        className: cn(buttonClasses, children.props.className),
+        ...props,
+        ...children.props,
+      });
+    }
 
-  return (
-    <AriaButton
-      ref={ref}
-      className={buttonClasses}
-      {...props}
-    >
-      {children}
-    </AriaButton>
-  );
-});
+    return (
+      <AriaButton ref={ref} className={buttonClasses} {...props}>
+        {children}
+      </AriaButton>
+    );
+  },
+);
 
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+export { Button };
