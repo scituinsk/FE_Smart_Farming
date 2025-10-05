@@ -64,10 +64,10 @@ export const CoreAppHeader = () => {
 
         {/* Navigasi Desktop */}
         <div className="hidden xl:flex items-center space-x-8">
-          {CORE_APP_NAV_ITEMS.map((item, index) => (
+          {CORE_APP_NAV_ITEMS.map((item) => (
             <Link
               to={item.href}
-              key={index}
+              key={`core-app-nav-item-${item.label}`}
               className={cn(
                 "text-[20px]",
                 getIsActivePath(item.href)
@@ -135,9 +135,9 @@ export const CoreAppHeader = () => {
         )}
       >
         <div className="flex flex-col items-center py-4">
-          {CORE_APP_NAV_ITEMS.map((item, index) => (
+          {CORE_APP_NAV_ITEMS.map((item) => (
             <Link
-              key={index}
+              key={`mobile-core-app-nav-item-${item.label}`}
               to={item.href}
               onClick={() => setIsMenuOpen(false)}
               className={cn(
