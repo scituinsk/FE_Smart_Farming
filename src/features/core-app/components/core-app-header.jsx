@@ -8,7 +8,11 @@ import { generateGreetings } from "../../../utils/generate-greetings";
 
 import { AppLogo } from "../../../components/app-logo";
 import { Button } from "../../../components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "../../../components/ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../../components/ui/avatar";
 
 export const CoreAppHeader = () => {
   const location = useLocation();
@@ -38,13 +42,13 @@ export const CoreAppHeader = () => {
                 "block w-full h-1 rounded-2xl  bg-text absolute left-0 transform transition duration-300 ease-in-out",
                 isMenuOpen
                   ? "top-1/2 rotate-45 -translate-y-1/2" // Pindah ke tengah lalu putar
-                  : "top-1.5" // Posisi garis atas
+                  : "top-1.5", // Posisi garis atas
               )}
             ></span>
             <span
               className={cn(
                 "block w-full h-1 rounded-2xl  bg-text absolute left-0 top-1/2 -translate-y-1/2 transition-opacity duration-300 ease-in-out",
-                isMenuOpen ? "opacity-0" : "opacity-100" // Sembunyikan garis tengah
+                isMenuOpen ? "opacity-0" : "opacity-100", // Sembunyikan garis tengah
               )}
             ></span>
             <span
@@ -52,7 +56,7 @@ export const CoreAppHeader = () => {
                 "block w-full h-1 rounded-2xl  bg-text absolute left-0 transform transition duration-300 ease-in-out",
                 isMenuOpen
                   ? "top-1/2 -rotate-45 -translate-y-1/2" // Pindah ke tengah lalu putar
-                  : "bottom-1.5" // Posisi garis bawah
+                  : "bottom-1.5", // Posisi garis bawah
               )}
             ></span>
           </button>
@@ -64,7 +68,12 @@ export const CoreAppHeader = () => {
             <Link
               to={item.href}
               key={index}
-              className={cn("text-[20px]", getIsActivePath(item.href) ? "text-primary font-bold" : "text-black")}
+              className={cn(
+                "text-[20px]",
+                getIsActivePath(item.href)
+                  ? "text-primary font-bold"
+                  : "text-black",
+              )}
             >
               {item.label}
             </Link>
@@ -120,7 +129,9 @@ export const CoreAppHeader = () => {
       <div
         className={cn(
           "absolute top-full left-0 w-full bg-white shadow-lg xl:hidden z-20 transform transition-all duration-300 ease-in-out",
-          isMenuOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"
+          isMenuOpen
+            ? "opacity-100 translate-y-0 visible"
+            : "opacity-0 -translate-y-4 invisible",
         )}
       >
         <div className="flex flex-col items-center py-4">
@@ -131,7 +142,9 @@ export const CoreAppHeader = () => {
               onClick={() => setIsMenuOpen(false)}
               className={cn(
                 "w-full text-left px-6 py-4 text-lg border-b border-gray-100 transition-colors duration-200 hover:bg-gray-50",
-                getIsActivePath(item.href) ? "text-primary font-bold bg-gray-50" : "text-black"
+                getIsActivePath(item.href)
+                  ? "text-primary font-bold bg-gray-50"
+                  : "text-black",
               )}
             >
               {item.label}

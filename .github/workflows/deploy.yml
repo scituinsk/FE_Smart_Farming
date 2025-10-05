@@ -3,7 +3,7 @@ name: Deploy React via SSH and Docker Compose
 # Pemicu workflow -> dijalankan saat ada push ke branch main atau bisa dijalankan manual
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:

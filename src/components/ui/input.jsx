@@ -1,5 +1,10 @@
 import React from "react";
-import { TextField as AriaTextField, Label as AriaLabel, Input as AriaInput, Text as AriaText } from "react-aria-components";
+import {
+  TextField as AriaTextField,
+  Label as AriaLabel,
+  Input as AriaInput,
+  Text as AriaText,
+} from "react-aria-components";
 
 import { cn } from "../../utils/cn";
 
@@ -15,7 +20,10 @@ TextField.displayName = "TextField";
 const Label = React.forwardRef(({ className, ...props }, ref) => (
   <AriaLabel
     ref={ref}
-    className={cn("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", className)}
+    className={cn(
+      "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+      className,
+    )}
     {...props}
   />
 ));
@@ -30,7 +38,7 @@ const Input = React.forwardRef(({ className, ...props }, ref) => (
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "data-[invalid]:border-red-500 ",
-      className
+      className,
     )}
     {...props}
   />
@@ -38,11 +46,7 @@ const Input = React.forwardRef(({ className, ...props }, ref) => (
 Input.displayName = "Input";
 
 const Text = React.forwardRef(({ className, ...props }, ref) => (
-  <AriaText
-    ref={ref}
-    className={cn("text-sm", className)}
-    {...props}
-  />
+  <AriaText ref={ref} className={cn("text-sm", className)} {...props} />
 ));
 Text.displayName = "Text";
 

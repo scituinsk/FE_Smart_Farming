@@ -16,7 +16,8 @@ export const NAV_ITEMS = [
 export const FEATURES = [
   {
     title: "Pemantauan Suhu",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
     icon: (
       <svg
         width={48}
@@ -38,7 +39,8 @@ export const FEATURES = [
   },
   {
     title: "Pemantauan Kelembaban",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
     icon: (
       <svg
         width={75}
@@ -56,7 +58,8 @@ export const FEATURES = [
   },
   {
     title: "Pemantauan Level Air",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
     icon: (
       <svg
         width={80}
