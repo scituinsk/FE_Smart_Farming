@@ -6,6 +6,7 @@ import { TextField, Input } from "../../components/ui/input";
 import { Card, CardContent, CardHeader } from "../../components/ui/card";
 
 import { SensorCardFooter } from "../../features/core-app/components/dashboard/sensor-card-footer";
+import { Skeleton } from "../../components/ui/skeleton";
 
 export const DashboardPage = () => {
   return (
@@ -143,47 +144,51 @@ export const DashboardPage = () => {
         <div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
           {Array.from({ length: 6 }).map((_, i) => (
             <Card className="overflow-hidden" key={i}>
-              <CardHeader
-                style={{
-                  backgroundImage: "url('/bg.jpg')",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-                className="h-[196px] relative"
-              >
-                <div className="absolute top-4 left-4 bg-white bg-opacity-70 px-3 py-1 rounded-2xl h-10 flex justify-center items-center">
-                  <svg
-                    width={28}
-                    height={28}
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.9596 3.91602L4.90381 10.7078V24.2915H23.0154V10.7078L13.9596 3.91602ZM11.6956 11.8398H16.2235V22.0276H11.6956V11.8398ZM18.4875 11.8398H20.7514V15.2357H18.4875V11.8398ZM17.7291 9.57588H10.1901L13.9596 6.74595L17.7291 9.57588ZM9.4317 11.8398V15.2357H7.16775V11.8398H9.4317ZM7.16775 17.4997H9.4317V22.0276H7.16775V17.4997ZM18.4875 22.0276V17.4997H20.7514V22.0276H18.4875Z"
-                      className="fill-primary"
-                    />
-                  </svg>
+              <CardHeader className="p-0 space-y-0">
+                <div className="h-[196px] relative">
+                  <Skeleton className="absolute inset-0 h-full w-full" />
+                  <div
+                    style={{
+                      backgroundImage: "url('/bg.djpg')",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                    className="absolute inset-0 h-full w-full z-10"
+                  ></div>
+                  <div className="absolute z-11 top-4 left-4 bg-white bg-opacity-70 px-3 py-1 rounded-2xl h-10 flex justify-center items-center">
+                    <svg
+                      width={28}
+                      height={28}
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.9596 3.91602L4.90381 10.7078V24.2915H23.0154V10.7078L13.9596 3.91602ZM11.6956 11.8398H16.2235V22.0276H11.6956V11.8398ZM18.4875 11.8398H20.7514V15.2357H18.4875V11.8398ZM17.7291 9.57588H10.1901L13.9596 6.74595L17.7291 9.57588ZM9.4317 11.8398V15.2357H7.16775V11.8398H9.4317ZM7.16775 17.4997H9.4317V22.0276H7.16775V17.4997ZM18.4875 22.0276V17.4997H20.7514V22.0276H18.4875Z"
+                        className="fill-primary"
+                      />
+                    </svg>
 
-                  <span className="font-bold ml-2 text-primary">
-                    Green House A
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4 bg-white bg-opacity-70 px-3 py-1 rounded-2xl h-10 flex justify-center items-center">
-                  <svg
-                    width={30}
-                    height={30}
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M21.25 7.5C22.2446 7.5 23.1984 7.89509 23.9017 8.59835C24.6049 9.30161 25 10.2554 25 11.25V12.5H26.25C26.5815 12.5 26.8995 12.6317 27.1339 12.8661C27.3683 13.1005 27.5 13.4185 27.5 13.75V16.25C27.5 16.5815 27.3683 16.8995 27.1339 17.1339C26.8995 17.3683 26.5815 17.5 26.25 17.5H25V18.75C25 19.7446 24.6049 20.6984 23.9017 21.4017C23.1984 22.1049 22.2446 22.5 21.25 22.5H6.25C5.25544 22.5 4.30161 22.1049 3.59835 21.4017C2.89509 20.6984 2.5 19.7446 2.5 18.75V11.25C2.5 10.2554 2.89509 9.30161 3.59835 8.59835C4.30161 7.89509 5.25544 7.5 6.25 7.5H21.25ZM21.2475 9.375H6.25C5.7839 9.37502 5.33451 9.54865 4.98948 9.86202C4.64444 10.1754 4.4285 10.606 4.38375 11.07L4.375 11.25V18.75C4.37499 19.2159 4.54844 19.6651 4.86156 20.0101C5.17468 20.3551 5.60502 20.5712 6.06875 20.6163L6.25 20.625H21.2475C21.7134 20.625 22.1626 20.4516 22.5076 20.1384C22.8526 19.8253 23.0687 19.395 23.1137 18.9313L23.1225 18.75V11.25C23.1225 10.7841 22.9491 10.3349 22.6359 9.98987C22.3228 9.64486 21.8925 9.42879 21.4287 9.38375L21.2475 9.375ZM7.5 11.25H18.75C19.0562 11.25 19.3517 11.3624 19.5805 11.5659C19.8093 11.7693 19.9554 12.0497 19.9912 12.3538L20 12.5V17.5C20 17.8062 19.8876 18.1017 19.6841 18.3305C19.4807 18.5593 19.2003 18.7054 18.8962 18.7413L18.75 18.75H7.5C7.19362 18.7503 6.89781 18.638 6.66875 18.4345C6.4397 18.231 6.29335 17.9505 6.2575 17.6462L6.25 17.5V12.5C6.25004 12.1938 6.36244 11.8983 6.56589 11.6695C6.76934 11.4407 7.04969 11.2946 7.35375 11.2587L7.5 11.25Z"
-                      className="fill-primary"
-                    />
-                  </svg>
-                  <span className="font-bold ml-2">75%</span>
+                    <span className="font-bold ml-2 text-primary">
+                      Green House A
+                    </span>
+                  </div>
+                  <div className="absolute top-4 z-11 right-4 bg-white bg-opacity-70 px-3 py-1 rounded-2xl h-10 flex justify-center items-center">
+                    <svg
+                      width={30}
+                      height={30}
+                      viewBox="0 0 30 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.25 7.5C22.2446 7.5 23.1984 7.89509 23.9017 8.59835C24.6049 9.30161 25 10.2554 25 11.25V12.5H26.25C26.5815 12.5 26.8995 12.6317 27.1339 12.8661C27.3683 13.1005 27.5 13.4185 27.5 13.75V16.25C27.5 16.5815 27.3683 16.8995 27.1339 17.1339C26.8995 17.3683 26.5815 17.5 26.25 17.5H25V18.75C25 19.7446 24.6049 20.6984 23.9017 21.4017C23.1984 22.1049 22.2446 22.5 21.25 22.5H6.25C5.25544 22.5 4.30161 22.1049 3.59835 21.4017C2.89509 20.6984 2.5 19.7446 2.5 18.75V11.25C2.5 10.2554 2.89509 9.30161 3.59835 8.59835C4.30161 7.89509 5.25544 7.5 6.25 7.5H21.25ZM21.2475 9.375H6.25C5.7839 9.37502 5.33451 9.54865 4.98948 9.86202C4.64444 10.1754 4.4285 10.606 4.38375 11.07L4.375 11.25V18.75C4.37499 19.2159 4.54844 19.6651 4.86156 20.0101C5.17468 20.3551 5.60502 20.5712 6.06875 20.6163L6.25 20.625H21.2475C21.7134 20.625 22.1626 20.4516 22.5076 20.1384C22.8526 19.8253 23.0687 19.395 23.1137 18.9313L23.1225 18.75V11.25C23.1225 10.7841 22.9491 10.3349 22.6359 9.98987C22.3228 9.64486 21.8925 9.42879 21.4287 9.38375L21.2475 9.375ZM7.5 11.25H18.75C19.0562 11.25 19.3517 11.3624 19.5805 11.5659C19.8093 11.7693 19.9554 12.0497 19.9912 12.3538L20 12.5V17.5C20 17.8062 19.8876 18.1017 19.6841 18.3305C19.4807 18.5593 19.2003 18.7054 18.8962 18.7413L18.75 18.75H7.5C7.19362 18.7503 6.89781 18.638 6.66875 18.4345C6.4397 18.231 6.29335 17.9505 6.2575 17.6462L6.25 17.5V12.5C6.25004 12.1938 6.36244 11.8983 6.56589 11.6695C6.76934 11.4407 7.04969 11.2946 7.35375 11.2587L7.5 11.25Z"
+                        className="fill-primary"
+                      />
+                    </svg>
+                    <span className="font-bold ml-2">75%</span>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent className="p-4 bg-primary text-white">
