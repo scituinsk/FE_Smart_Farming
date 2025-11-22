@@ -4,6 +4,17 @@ import { FaSearch } from "react-icons/fa";
 import { Button } from "../../components/ui/button";
 import { Input, TextField } from "../../components/ui/input";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogFooter,
+  DialogClose,
+} from "../../components/ui/dialog";
+
 export const HistoryPage = () => {
   return (
     <div className="app-container">
@@ -68,6 +79,31 @@ export const HistoryPage = () => {
           </div>
         </div>
       </div>
+      <Dialog>
+        {/* Tombol untuk membuka dialog */}
+        <DialogTrigger className="bg-blue-500 text-white p-2 rounded">
+          Buka Dialog
+        </DialogTrigger>
+
+        {/* Konten dialog, tombol close akan muncul otomatis */}
+        <DialogContent isDismissable={false}>
+          <DialogHeader>
+            <DialogTitle>Judul Dialog</DialogTitle>
+            <DialogDescription>
+              Ini adalah deskripsi di dalam dialog. Tombol 'X' di pojok kanan
+              atas sekarang berfungsi untuk menutup dialog ini.
+            </DialogDescription>
+          </DialogHeader>
+          <p>Konten utama dialog...</p>
+          <DialogFooter>
+            {/* Anda masih bisa membuat tombol close manual jika mau */}
+            {/* <DialogClose asChild> */}
+            {/* <Button variant="secondary">Tutup Manual</Button> */}
+            {/* </DialogClose> */}
+            <button className="bg-gray-200 p-2 rounded">Simpan</button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import backgroundImage from "../../assets/hero-image-bg.png";
+import backgroundImage from "../../assets/hero-image-bg-compressed.png";
 
 import { Button } from "../../components/ui/button";
 import { FEATURES } from "../../constants/landing-page-config.jsx";

@@ -31,7 +31,7 @@ body {
 
   font-family: "Rubik", sans-serif;
   overflow-y: scroll;
-  scrollbar-gutter: auto;
+  scrollbar-gutter: stable;
 }
 
 button {
