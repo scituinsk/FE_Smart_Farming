@@ -26,7 +26,7 @@ export type User = {
 
 const fetchSession = async (): Promise<User | null> => {
   try {
-    const response = await api.get<UserResponse>("/profile/me");
+    const response = await api.get<UserResponse>("/user/me");
     const data = response.data.data;
 
     return {
