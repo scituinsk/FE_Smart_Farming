@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
+import DeleteAccountPage from "./pages/account/delete-account-page";
 
 import { AuthLayout } from "./layouts/auth-layout";
 import { GlobalLayout } from "./layouts/global-layout";
@@ -10,6 +11,7 @@ import { NotFoundPage } from "./pages/common/not-found";
 import { InternalServerError } from "./pages/common/internal-server-error";
 import { DashboardPage } from "./pages/core-app/dashboard-page";
 import { HistoryPage } from "./pages/core-app/history-page";
+import PrivacyPolicyPage from "./pages/legal/privacy-policy-page";
 
 //======================================================================
 // KONFIGURASI ROUTER
@@ -75,6 +77,14 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFoundPage />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "/delete-account",
+        element: <DeleteAccountPage />,
       },
     ],
   },

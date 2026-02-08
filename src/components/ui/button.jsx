@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { cva } from "class-variance-authority";
 import { Button as AriaButton } from "react-aria-components";
 import { forwardRef, cloneElement, isValidElement } from "react";
@@ -13,6 +14,7 @@ const buttonVariants = cva(
 
         primary: "bg-primary text-text-invers hover:bg-secondary",
         secondary: "bg-secondary text-text-invers hover:bg-primary",
+        teal: "bg-primary text-text-invers hover:bg-[#274F4D] active:bg-[#274F4D]",
         ternary:
           "bg-ternary text-text-invers hover:bg-primary active:bg-secondary",
 
