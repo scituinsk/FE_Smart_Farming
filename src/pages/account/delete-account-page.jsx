@@ -39,7 +39,7 @@ const DeleteAccountPage = () => {
   // Reset error saat mengetik
   useEffect(() => {
     if (errorMessage) setErrorMessage("");
-  }, [username, password, userTypedCode]);
+  }, [username, password, userTypedCode, errorMessage]);
 
   // Generate Kode Acak
   const generateCode = () => {
@@ -96,7 +96,9 @@ const DeleteAccountPage = () => {
       await deleteAccountService(token, password);
       setStep("success");
     } catch (error) {
-      setErrorMessage("Gagal menghapus akun. Sesi mungkin telah berakhir.");
+      setErrorMessage(
+        error.message || "Gagal menghapus akun. Sesi mungkin telah berakhir.",
+      );
     } finally {
       setLoading(false);
     }

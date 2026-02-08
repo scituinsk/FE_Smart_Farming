@@ -21,7 +21,7 @@ const PrivacyPolicyPage = () => {
             .replace(/^Privacy Policy$/m, "# Privacy Policy")
             .replace(/^(Last updated:.*)$/m, "_$1_\n\n---\n\n")
             .replace(
-              /^(Interpretation and Definitions|Collecting and Using Your Personal Data|Use of Your Personal Data|Retention of Your Personal Data|Transfer of Your Personal Data|Delete Your Personal Data|Disclosure of Your Personal Data|Security of Your Personal Data|Children\'s Privacy|Links to Other Websites|Changes to this Privacy Policy|Contact Us)$/gm,
+              /^(Interpretation and Definitions|Collecting and Using Your Personal Data|Use of Your Personal Data|Retention of Your Personal Data|Transfer of Your Personal Data|Delete Your Personal Data|Disclosure of Your Personal Data|Security of Your Personal Data|Children's Privacy|Links to Other Websites|Changes to this Privacy Policy|Contact Us)$/gm,
               "## $1",
             )
             .replace(
@@ -78,49 +78,49 @@ const PrivacyPolicyPage = () => {
         <article>
           <ReactMarkdown
             components={{
-              h1: ({ node, ...props }) => (
+              h1: ({ ...props }) => (
                 <h1
                   className="text-3xl sm:text-4xl font-extrabold text-slate-800 mb-2 pb-2"
                   {...props}
                 />
               ),
-              h2: ({ node, ...props }) => (
+              h2: ({ ...props }) => (
                 <h2
                   className="text-2xl font-bold text-slate-700 mt-10 mb-4 block border-b border-slate-100 pb-2"
                   {...props}
                 />
               ),
-              h3: ({ node, ...props }) => (
+              h3: ({ ...props }) => (
                 <h3
                   className="text-lg font-bold text-slate-600 mt-6 mb-3"
                   {...props}
                 />
               ),
-              p: ({ node, ...props }) => (
+              p: ({ ...props }) => (
                 <p
                   className="text-[15px] leading-relaxed text-slate-500 mb-4"
                   {...props}
                 />
               ),
-              ul: ({ node, ...props }) => (
+              ul: ({ ...props }) => (
                 <ul
                   className="list-disc pl-5 mb-4 space-y-2 text-slate-500"
                   {...props}
                 />
               ),
-              li: ({ node, ...props }) => (
+              li: ({ ...props }) => (
                 <li className="text-[15px] pl-1 leading-relaxed" {...props} />
               ),
-              a: ({ node, ...props }) => (
+              a: ({ ...props }) => (
                 <a
                   className="text-emerald-600 font-medium hover:underline hover:text-emerald-700 transition-colors"
                   {...props}
                 />
               ),
-              hr: ({ node, ...props }) => (
+              hr: ({ ...props }) => (
                 <hr className="my-8 border-slate-200" {...props} />
               ),
-              strong: ({ node, ...props }) => (
+              strong: ({ ...props }) => (
                 <strong className="font-bold text-slate-700" {...props} />
               ),
             }}
