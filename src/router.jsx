@@ -86,6 +86,14 @@ const router = createBrowserRouter([
         path: "*",
         element: <NotFoundPage />,
       },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "/delete-account",
+        element: <DeleteAccountPage />,
+      },
     ],
   },
 ]);
