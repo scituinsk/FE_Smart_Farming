@@ -1,10 +1,9 @@
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.base_url;
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const getApiUrl = () => {
-  const isLocal = window.location.hostname === "localhost";
-  return isLocal || API_BASE_URL || "/api-proxy";
+  return API_BASE_URL || "/api-proxy";
 };
 
 export const loginService = async (username, password) => {

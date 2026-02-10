@@ -69,9 +69,14 @@ const DeleteAccountPage = () => {
         setErrorMessage("Gagal: Token akses tidak ditemukan.");
       }
     } catch (error) {
-      setErrorMessage(
-        error.message || "Login Gagal. Cek username & password Anda.",
-      );
+      const serverMessage =
+        error.detail || error.message || "Username atau Password salah.";
+      const finalMessage =
+        typeof serverMessage === "object"
+          ? JSON.stringify(serverMessage)
+          : serverMessage;
+
+      setErrorMessage(finalMessage);
     } finally {
       setLoading(false);
     }
@@ -160,6 +165,8 @@ const DeleteAccountPage = () => {
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 z-10" />
                   <Input
                     type="text"
+                    name="username"
+                    autoComplete="username"
                     placeholder="Masukkan username..."
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}

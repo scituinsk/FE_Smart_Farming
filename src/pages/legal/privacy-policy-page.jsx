@@ -12,7 +12,6 @@ const PrivacyPolicyPage = () => {
     const fetchTerms = async () => {
       try {
         const response = await getTermsService();
-        // Ambil string content
         let rawText = response.data?.content || response.content || "";
 
         if (rawText) {
